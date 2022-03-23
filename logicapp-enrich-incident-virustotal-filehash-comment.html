@@ -1,0 +1,179 @@
+![alt text](https://vt-gtm-wp-media.storage.googleapis.com/logo.png 'VirusTotal')
+<h2>File: @{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['meaningful_name']} - @{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['id']}</h2>
+<hr/>
+<h3>Detection</h3>
+
+@{if(contains(body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes'],'sigma_analysis_stats'),concat('
+<h4>Crowdsourced Sigma Rules</h4>
+<table>
+	<tr>
+		<th>Critical</th>
+		<th>High</th>
+		<th>Medium</th>
+		<th>Low</th>
+	</tr>
+	<tr>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['sigma_analysis_stats']?['critical'],'</td>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['sigma_analysis_stats']?['high'],'</td>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['sigma_analysis_stats']?['medium'],'</td>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['sigma_analysis_stats']?['low'],'</td>
+	</tr>
+</table>
+'),null)}
+
+@{if(contains(body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes'],'crowdsourced_ids_stats'),concat('
+<h4>Crowdsourced IDS Rules</h4>
+<table>
+	<tr>
+		<th>High</th>
+		<th>Medium</th>
+		<th>Low</th>
+		<th>Info</th>
+	</tr>
+	<tr>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['crowdsourced_ids_stats']?['high'],'</td>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['crowdsourced_ids_stats']?['medium'],'</td>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['crowdsourced_ids_stats']?['low'],'</td>
+		<td style=\"text-align:center\">',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['crowdsourced_ids_stats']?['info'],'</td>
+	</tr>
+</table>
+'),null)}
+
+<h4>Analyses</h4>
+<table>
+	<tr>
+		<th>Harmless</th>
+		<th>Malicious</th>
+		<th>Suspicious</th>
+		<th>Undetected</th>
+	</tr>
+	<tr>
+		<td style='text-align:center'>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['last_analysis_stats']?['harmless']}</td>
+		<td style='text-align:center'>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['last_analysis_stats']?['malicious']}</td>
+		<td style='text-align:center'>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['last_analysis_stats']?['suspicious']}</td>
+		<td style='text-align:center'>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['last_analysis_stats']?['undetected']}</td>
+	</tr>
+</table>
+
+<h3>Community Score</h3>
+<table>
+	<tr>
+		<th>Malicious</th>
+		<th>Harmless</th>
+	</tr>
+	<tr>
+		<td style='text-align:center'>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['total_votes']?['malicious']}</td>
+		<td style='text-align:center'>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['total_votes']?['harmless']}</td>
+	</tr>
+</table>
+
+<h3>Details</h3>
+<h4>Basic Properties</h4>
+<table>
+	<tr>
+		<th>MD5</th>
+		<td>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['md5']}</td>
+	</tr>
+	<tr>
+		<th>SHA-1</th>
+		<td>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['sha1']}</td>
+	</tr>
+	<tr>
+		<th>SHA-256</th>
+		<td>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['sha256']}</td>
+	</tr>
+	<tr>
+		<th>File type</th>
+		<td>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['type_description']}</td>
+	</tr>
+	<tr>
+		<th>Magic</th>
+		<td>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['magic']}</td>
+	</tr>
+	<tr>
+		<th>File size</th>
+		<td>@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['size']} bytes</td>
+	</tr>
+</table>
+
+<h4>History</h4>
+<table>
+@{if(contains(body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes'],'creation_date'),concat('
+	<tr>
+		<th>Creation Time</th>
+		<td>',addToTime('1970-01-01T00:00:00Z',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['creation_date'],'Second','u'),'</td>
+	</tr>
+'),null)}
+	<tr>
+		<th>First Submission</th>
+		<td>@{addToTime('1970-01-01T00:00:00Z',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['first_submission_date'],'Second','u')}</td>
+	</tr>
+	<tr>
+		<th>Last Submission</th>
+		<td>@{addToTime('1970-01-01T00:00:00Z',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['last_submission_date'],'Second','u')}</td>
+	</tr>
+	<tr>
+		<th>Last Analysis</th>
+		<td>@{addToTime('1970-01-01T00:00:00Z',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['last_analysis_date'],'Second','u')}</td>
+	</tr>
+@{if(contains(body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes'],'last_modification_date'),concat('
+	<tr>
+		<th>Latest Contents Modification</th>
+		<td>',addToTime('1970-01-01T00:00:00Z',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['last_modification_date'],'Second','u'),'</td>
+	</tr>
+'),null)}
+</table>
+
+@{if(contains(body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes'],'trusted_verdict'),concat('
+<h4>Known source</h4>
+<table>
+	<tr>
+		<th>Organization</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['trusted_verdict']?['organization'],'</td>
+	</tr>
+	<tr>
+		<th>File name</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['trusted_verdict']?['filename'],'</td>
+	</tr>
+</table>
+'),null)}
+
+@{if(contains(body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes'],'signature_info'),concat(
+'<h4>Signature Info</h4>
+<table>
+	<tr>
+		<th>Signature verifiation</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['verified'],'</td>
+	</tr>
+	<tr>
+		<th>Copyright</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['copyright'],'</td>
+	</tr>
+	<tr>
+		<th>Product</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['product'],'</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['description'],'</td>
+	</tr>
+	<tr>
+		<th>Original Name</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['original name'],'</td>
+	</tr>
+	<tr>
+		<th>Internal Name</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['internal name'],'</td>
+	</tr>
+	<tr>
+		<th>File Version</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['file version'],'</td>
+	</tr>
+	<tr>
+		<th>Date signed</th>
+		<td>',body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['attributes']?['signature_info']?['signing date'],'</td>
+	</tr>
+</table>
+'),null)}
+
+[Full report](https://www.virustotal.com/gui/file/@{body('VirusTotal_|_Retrieve_information_about_a_file')?['data']?['id']})
