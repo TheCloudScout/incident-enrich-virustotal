@@ -205,14 +205,14 @@
         "$connections": {
             "value": {
                 "azuresentinel": {
-                    "connectionId": "/subscriptions/b4824877-0da7-4d92-80e5-e186f01b0653/resourceGroups/RG-Security/providers/Microsoft.Web/connections/azuresentinel",
+                    "connectionId": "/subscriptions/< subscription ID >/resourceGroups/< Resource Group >/providers/Microsoft.Web/connections/azuresentinel",
                     "connectionName": "azuresentinel",
-                    "id": "/subscriptions/b4824877-0da7-4d92-80e5-e186f01b0653/providers/Microsoft.Web/locations/westeurope/managedApis/azuresentinel"
+                    "id": "/subscriptions/< subscription ID >/providers/Microsoft.Web/locations/westeurope/managedApis/azuresentinel"
                 },
                 "virustotal": {
-                    "connectionId": "/subscriptions/b4824877-0da7-4d92-80e5-e186f01b0653/resourceGroups/RG-Security/providers/Microsoft.Web/connections/virustotal",
+                    "connectionId": "/subscriptions/< subscription ID >/resourceGroups/< Resource Group >/providers/Microsoft.Web/connections/virustotal",
                     "connectionName": "virustotal",
-                    "id": "/subscriptions/b4824877-0da7-4d92-80e5-e186f01b0653/providers/Microsoft.Web/locations/westeurope/managedApis/virustotal"
+                    "id": "/subscriptions/< subscription ID >/providers/Microsoft.Web/locations/westeurope/managedApis/virustotal"
                 }
             }
         }
