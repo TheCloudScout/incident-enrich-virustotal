@@ -14,18 +14,18 @@ https://medium.com/@koosg/automate-your-sentinel-incident-triage-a316d229f2fc
 
 # Contents
 
-## logicapp-enrich-incident-virustotal.json
+### logicapp-enrich-incident-virustotal.json
 
 This is the Logic App used as an example in the article. Just copy and paste the contents of this file into your newly created Logic App/playbook using the code view.
 
-## logicapp-enrich-incident-virustotal-filehash-comment.html
+### logicapp-enrich-incident-virustotal-filehash-comment.html
 
 This is the unaltered html code used to construct the Sentinel comment for file hash(es) reports.
 
-## logicapp-enrich-incident-virustotal-ip-comment.html
+### logicapp-enrich-incident-virustotal-ip-comment.html
 
 This is the unaltered html code used to construct the Sentinel comment for IP reports.
 
-## Convert-html-content-to-json-string.ps1
+### Convert-html-content-to-json-string.ps1
 
 An example PowerShell commandline to convert the contents of an html file into a proper JSON formated single string to put into the `message` value of your playbook.
