@@ -22,7 +22,7 @@ To deploy these parsers as functions automatically, click the button below:
 
 <br>
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FTheCloudScout%2FAzure-Sentinel%2Fmaster%2FParsers%2FAzureFirewall%2FARM%2FAzureFirewallParser-template.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FTheCloudScout%2Fincident-enrich-virustotal%2Fmain%2Flogicapp-enrich-incident-virustotal.template.json)
 
 <br>
 
