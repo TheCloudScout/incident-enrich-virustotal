@@ -16,9 +16,9 @@ https://medium.com/@koosg/automate-your-sentinel-incident-triage-a316d229f2fc
 
 ### logicapp-enrich-incident-virustotal.template.json
 
-This is the ARM template you can use to deploy the Loci App used as an example in the article.
+This is the ARM template you can use to deploy the Logic App used as an example in the article.
 
-To deploy these parsers as functions automatically, click the button below:
+To deploy this playbook, click the button below. After deployment you still need to fix the Sentinel and VirusTotal steps and create a new connection for them with your own settings/API key.
 
 <br>
 
