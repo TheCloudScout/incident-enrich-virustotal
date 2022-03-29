@@ -14,9 +14,17 @@ https://medium.com/@koosg/automate-your-sentinel-incident-triage-a316d229f2fc
 
 # Contents
 
-### logicapp-enrich-incident-virustotal.json
+### logicapp-enrich-incident-virustotal.template.json
 
-This is the Logic App used as an example in the article. Just copy and paste the contents of this file into your newly created Logic App/playbook using the code view.
+This is the ARM template you can use to deploy the Loci App used as an example in the article.
+
+To deploy these parsers as functions automatically, click the button below:
+
+<br>
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FTheCloudScout%2FAzure-Sentinel%2Fmaster%2FParsers%2FAzureFirewall%2FARM%2FAzureFirewallParser-template.json)
+
+<br>
 
 ### logicapp-enrich-incident-virustotal-filehash-comment.html
 
